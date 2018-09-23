@@ -98,7 +98,8 @@ class Server {
 
         // redirect all others to the index (HTML5 history)
         app.all('/*', (req, res) => {
-            res.sendFile(__dirname + './../client/dist/Angular6-CustomersService/index.html');
+            // res.sendFile(__dirname + './../client/dist/Angular6-CustomersService/index.html');
+            res.sendFile('index.html', { root: './../client/dist/Angular6-CustomersService' });
         });
     }
 
