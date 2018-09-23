@@ -9,7 +9,11 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "server": "node server.js",
     "start1": "concurrently \"npm run tsc:w\" \"nodemon server.js\"",
-    "start": "nodemon server.js"
+    "start": "nodemon server.js",
+    "start_prod_jit": "cd ../client/ && ng build --prod && cd ../server/ && npm start",
+    "start_prod_aot": "cd ../client/ && ng build --prod --aot && cd ../server/ && npm start",
+    "start_dev_jit": "cd ../client/ && ng build && cd ../server/ && npm start",
+    "start_dev_aot": "cd ../client/ && ng build --aot && cd ../server/ && npm start"
   },
   "author": "",
   "license": "ISC",

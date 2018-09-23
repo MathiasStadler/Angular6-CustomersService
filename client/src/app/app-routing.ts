@@ -2,13 +2,15 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-// import { CustomerModule } from './customers/customers.module';
+import { CustomerModule } from './customers/customers.module';
 
 import { CustomersComponent } from './customers/customers.component';
 import { CustomersGridComponent } from './customers/customers-grid.component';
 import { CustomerEditComponent } from './customers/customers-edit.component';
 import { CustomerEditReactiveComponent } from './customers/customer-edit-reactive.component';
 import { IRouting } from './shared/interfaces';
+
+
 
 
 const appRoutes: Routes = [

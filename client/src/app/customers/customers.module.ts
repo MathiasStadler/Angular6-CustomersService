@@ -13,3 +13,4 @@ import { SharedModule } from '../shared/shared.module';
     exports: [CustomersComponent, CustomersGridComponent, CustomerEditComponent, CustomerEditReactiveComponent]
 })
 export class CustomerModule { }
+
