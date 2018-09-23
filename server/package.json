@@ -4,8 +4,12 @@
   "description": "",
   "main": "server.js",
   "scripts": {
+    "tsc": "tsc",
+    "tsc:w": "tsc -w",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "server": "node server.js",
+    "start1": "concurrently \"npm run tsc:w\" \"nodemon server.js\"",
+    "start": "nodemon server.js"
   },
   "author": "",
   "license": "ISC",
@@ -23,6 +27,7 @@
     "mongose": "0.0.2-security",
     "morgan": "^1.9.1",
     "nodemon": "^1.18.4",
-    "serve-favicon": "^2.5.0"
+    "serve-favicon": "^2.5.0",
+    "tsc": "^1.20150623.0"
   }
 }

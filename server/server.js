@@ -1,19 +1,19 @@
-const express       = require('express'),
-    exphbs          = require('express-handlebars'),
-    hbsHelpers      = require('handlebars-helpers'),
-    hbsLayouts      = require('handlebars-layouts'),
-    bodyParser      = require('body-parser'),
-    cookieParser    = require('cookie-parser'),
-    errorhandler    = require('errorhandler'),
-    csrf            = require('csurf'),
-    morgan          = require('morgan'),
-    favicon         = require('serve-favicon'),
-    
-    router          = require('./routes/router'),
-    database        = require('./lib/database'),
-    seeder          = require('./lib/dbSeeder'),
-    app             = express(),
-    port            = 3000;
+const express = require('express'),
+    exphbs = require('express-handlebars'),
+    hbsHelpers = require('handlebars-helpers'),
+    hbsLayouts = require('handlebars-layouts'),
+    bodyParser = require('body-parser'),
+    cookieParser = require('cookie-parser'),
+    errorhandler = require('errorhandler'),
+    csrf = require('csurf'),
+    morgan = require('morgan'),
+    favicon = require('serve-favicon'),
+
+    router = require('./routes/router'),
+    database = require('./lib/database'),
+    seeder = require('./lib/dbSeeder'),
+    app = express(),
+    port = 3000;
 
 class Server {
 
@@ -45,6 +45,7 @@ class Server {
     initExpressMiddleWare() {
         app.use(favicon(__dirname + '/public/images/favicon.ico'));
         app.use(express.static(__dirname + '/public'));
+        app.use(express.static(__dirname + './../client/dist/Angular6-CustomersService'));
         app.use(morgan('dev'));
         app.use(bodyParser.urlencoded({ extended: true }));
         app.use(bodyParser.json());
@@ -87,7 +88,7 @@ class Server {
             //the seeder when in dev mode
             //if (process.env.NODE_ENV === 'development') {
             //  seeder.init();
-            //} 
+            //}
             seeder.init();
         });
     }
@@ -97,7 +98,7 @@ class Server {
 
         // redirect all others to the index (HTML5 history)
         app.all('/*', (req, res) => {
-            res.sendFile(__dirname + '/public/index.html');
+            res.sendFile(__dirname + './../client/dist/Angular6-CustomersService/index.html');
         });
     }
 
