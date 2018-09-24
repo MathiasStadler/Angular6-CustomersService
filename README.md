@@ -1,1 +1,34 @@
 # Angular6-CustomersService
+
+## used version
+
+```bash
+Angular CLI: 6.2.1
+Node: 8.11.1
+OS: darwin x64
+Angular: 5.0.3
+... animations, common, compiler, core, forms, http
+... platform-browser, platform-browser-dynamic, router
+
+Package                      Version
+------------------------------------------------------
+@angular-devkit/architect    0.8.1 (cli-only)
+@angular-devkit/core         0.8.1 (cli-only)
+@angular-devkit/schematics   0.8.1 (cli-only)
+@schematics/angular          0.8.1 (cli-only)
+@schematics/update           0.8.1 (cli-only)
+rxjs                         5.5.2
+typescript                   2.6.1
+
+mongod --version
+db version v4.0.2
+git version: fc1573ba18aee42f97a3bb13b67af7d837826b47
+allocator: system
+modules: none
+build environment:
+    distarch: x86_64
+    target_arch: x86_64
+
+"express": "^4.16.3"
+
+```
