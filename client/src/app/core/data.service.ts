@@ -5,8 +5,8 @@ import { Injectable } from '@angular/core';
 // of this file to use it instead)
 import { HttpClient, HttpResponse, HttpErrorResponse } from '@angular/common/http';
 
-import { Observable } from 'rxjs';
-import { throwError } from 'rxjs';  // Updated for Angular 6/RxJS 6
+import { Observable, throwError } from 'rxjs';
+// import { throwError } from 'rxjs';  // Updated for Angular 6/RxJS 6
 // see web page https://www.metaltoad.com/blog/angular-6-upgrading-api-calls-rxjs-6
 
 // see for import operators
@@ -99,11 +99,11 @@ export class DataService {
     console.error('server error:', error);
     if (error.error instanceof Error) {
       const errMessage = error.error.message;
-      return Observable.throw(errMessage);
+      return throwError(errMessage);
       // Use the following instead if using lite-server
       // return Observable.throw(err.text() || 'backend server error');
     }
-    return Observable.throw(error || 'Node.js server error');
+    return throwError(error || 'Node.js server error');
   }
 
 }
