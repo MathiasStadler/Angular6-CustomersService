@@ -47,6 +47,8 @@ Package                      Version
 rxjs                         5.5.2
 typescript                   2.6.1
 
+"rxjs": "^6.2.2",
+
 mongod --version
 db version v4.0.2
 git version: fc1573ba18aee42f97a3bb13b67af7d837826b47
