@@ -21,6 +21,10 @@ port = 3000;
  *
  *
  * @class Server
+/**
+ *
+ *
+ * @class Server
  */
 class Server {
   constructor() {
@@ -111,7 +115,8 @@ class Server {
        */
   initDbSeeder() {
     database.open(() => {
-      // Set NODE_ENV to 'development' and uncomment the following if to only run
+      // Set NODE_ENV to 'development' and uncomment the following if
+      // to only run
       // the seeder when in dev mode
       // if (process.env.NODE_ENV === 'development') {
       //  seeder.init();

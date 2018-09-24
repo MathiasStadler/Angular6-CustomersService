@@ -1,13 +1,21 @@
 const mongoose = require('mongoose');
 
-
 const Schema = mongoose.Schema;
-
 
 const Customer = require('../models/customer');
 
+/**
+ *
+ *
+ * @class CustomersRepository
+ */
 class CustomersRepository {
-  // get all the customers
+  /**
+   *
+   *
+   * @param {any} callback
+   * @memberof CustomersRepository
+   */
   getCustomers(callback) {
     console.log('*** CustomersRepository.getCustomers');
     Customer.count((err, custsCount) => {
@@ -26,7 +34,14 @@ class CustomersRepository {
       });
     });
   }
-
+  /**
+   *
+   *
+   * @param {any} skip
+   * @param {any} top
+   * @param {any} callback
+   * @memberof CustomersRepository
+   */
   getPagedCustomers(skip, top, callback) {
     console.log('*** CustomersRepository.getPagedCustomers');
     Customer.count((err, custsCount) => {
@@ -40,7 +55,9 @@ class CustomersRepository {
           .limit(top)
           .exec((err, customers) => {
             if (err) {
-              console.log(`*** CustomersRepository.getPagedCustomers error: ${err}`);
+              console.log(
+                  `*** CustomersRepository.getPagedCustomers error: ${err}`
+              );
               return callback(err);
             }
             callback(null, {
@@ -58,7 +75,18 @@ class CustomersRepository {
       let count = custsCount;
       console.log(`Customers count: ${count}`);
 
-      Customer.find({}, {'_id': 0, 'firstName': 1, 'lastName': 1, 'city': 1, 'state': 1, 'orderCount': 1, 'gender': 1})
+      Customer.find(
+          {},
+          {
+            _id: 0,
+            firstName: 1,
+            lastName: 1,
+            city: 1,
+            state: 1,
+            orderCount: 1,
+            gender: 1,
+          }
+      )
           .skip(skip)
           .limit(top)
           .exec((err, customersSummary) => {
@@ -87,7 +115,11 @@ class CustomersRepository {
     console.log('*** CustomersRepository.insertCustomer');
     console.log(state);
     let customer = new Customer();
-    let newState = {'id': state[0].id, 'abbreviation': state[0].abbreviation, 'name': state[0].name};
+    let newState = {
+      id: state[0].id,
+      abbreviation: state[0].abbreviation,
+      name: state[0].name,
+    };
     console.log(body);
 
     customer.firstName = body.firstName;
@@ -113,7 +145,11 @@ class CustomersRepository {
   updateCustomer(id, body, state, callback) {
     console.log('*** CustomersRepository.editCustomer');
 
-    let stateObj = {'id': state[0].id, 'abbreviation': state[0].abbreviation, 'name': state[0].name};
+    let stateObj = {
+      id: state[0].id,
+      abbreviation: state[0].abbreviation,
+      name: state[0].name,
+    };
 
     Customer.findById(id, (err, customer) => {
       if (err) {
@@ -131,7 +167,6 @@ class CustomersRepository {
       customer.zip = body.zip || customer.zip;
       customer.gender = body.gender || customer.gender;
 
-
       customer.save((err, customer) => {
         if (err) {
           console.log(`*** CustomersRepository.updateCustomer error: ${err}`);
@@ -146,7 +181,7 @@ class CustomersRepository {
   // delete a customer
   deleteCustomer(id, callback) {
     console.log('*** CustomersRepository.deleteCustomer');
-    Customer.remove({'_id': id}, (err, customer) => {
+    Customer.remove({_id: id}, (err, customer) => {
       if (err) {
         console.log(`*** CustomersRepository.deleteCustomer error: ${err}`);
         return callback(err, null);
