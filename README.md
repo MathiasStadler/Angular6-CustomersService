@@ -5,6 +5,9 @@
 
 # Angular6-CustomersService
 
+## first of all
+
+ Thank Dan Wahlin for the great example
 
 ## TL;DR
 
