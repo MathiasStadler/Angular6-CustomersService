@@ -1,4 +1,28 @@
+<!-- markdownlint-disable MD041 -->
+> I would greatly appreciate it if you kindly give me some feedback if you found an error, question or additional thought
+> [Send feedback to me](mailto:feedback@mathias-stadler.de)
+<!-- markdownlint-enable MD041 -->
+
 # Angular6-CustomersService
+
+
+## TL;DR
+
+```bash
+brew install mongodb
+mongod --dbpath /tmp/mongo-data
+# open another shell
+git clone <REPO>
+cd <REPO_DIR>
+cd client
+npm i
+cd ../server
+npm i
+start_prod_jit
+# open a brwoser and call http://localhost:3000
+```
+
+
 
 ## used version
 
