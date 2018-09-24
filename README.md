@@ -7,7 +7,7 @@
 
 ## first of all
 
- Thank Dan Wahlin for the great example
+ Thanks Dan Wahlin for the great example. His version  explain he here [video|https://www.youtube.com/watch?v=YxK4UW4UfCk] in deep detail.
 
 ## TL;DR
 
