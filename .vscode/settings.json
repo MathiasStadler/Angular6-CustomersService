@@ -1,3 +1,13 @@
 {
-    "git.ignoreLimitWarning": true
+    "git.ignoreLimitWarning": true,
+    "cSpell.words": [
+        "REPO",
+        "Wahlin",
+        "dbpath",
+        "devkit",
+        "distarch",
+        "markdownlint",
+        "mongod",
+        "stadler"
+    ]
 }
